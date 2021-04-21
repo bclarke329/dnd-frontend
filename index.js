@@ -1,6 +1,7 @@
 const baseUrl = "https://www.dnd5eapi.co/api/"
 
 document.addEventListener('DOMContentLoaded', getSpecies)
+document.addEventListener('DOMContentLoaded', getCharacterClass)
 
 //fetching race names
 function getSpecies() {
@@ -15,7 +16,7 @@ function getSpecies() {
 //adding races to dropdown menu
 function addSpeciesToDrop(data) {
     let raceArray = data["results"]
-    console.log(raceArray)
+    // console.log(raceArray)
     let dropdown = document.getElementById("species-dropdown")
     dropdown.length = 0;
 
@@ -36,11 +37,28 @@ function getCharacterClass() {
     fetch("https://www.dnd5eapi.co/api/classes")
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
+
         addCharacterClassesToDrop(data)
     })
 }
 
+
 function addCharacterClassesToDrop(data){
+    let classesArray = data["results"]
+    let classDropdown = document.getElementById("class-dropdown")
+    classDropdown.length = 0
+
+    let newDefaultOption = document.createElement('option')
+    newDefaultOption.text = 'Choose A Class';
+    classDropdown.add(newDefaultOption);
+    classDropdown.selectedIndex = 0
+
+    let options;
+    for (let i = 0; i < classesArray.length; i++) {
+        options = document.createElement('option')
+        options.text = classesArray[i].name
+        classDropdown.add(options)
+    }
 
 }
