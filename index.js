@@ -21,7 +21,6 @@ function addSpeciesToDrop(data) {
     let raceArray = data["results"]
     // console.log(raceArray)
     let dropdown = document.getElementById("species-dropdown")
-    // dropdown.length = 0;
 
     let defaultOption = document.createElement('option')
     defaultOption.text = 'Choose A Race';
@@ -50,7 +49,6 @@ function getCharacterClass() {
 function addCharacterClassesToDrop(data){
     let classesArray = data["results"]
     let classDropdown = document.getElementById("class-dropdown")
-    // classDropdown.length = 0
 
     let newDefaultOption = document.createElement('option')
     newDefaultOption.text = 'Choose A Class';
@@ -78,7 +76,6 @@ function fetchAlignments() {
 function addAlignmentsToDrop(data) {
     let alignmentArray = data["results"]
     let alignmentDropDown = document.getElementById('alignment-dropdown')
-    // alignmentDropDown.length = 0
 
     let thirdDefaultOption = document.createElement('option')
     thirdDefaultOption.text = "Choose An Alignment"
@@ -113,17 +110,25 @@ function addWeaponToDrop(data) {
     // debugger
 
     let weaponDropdown = document.getElementById('weapon-dropdown')
-    // weaponDropdown.length = 0
+    let secondaryDropdown = document.getElementById('secondary-weapon-dropdown')
+
     let fourthDefaultOption = document.createElement('option')
+    let fifthDefaultOption = document.createElement('option')
+
     fourthDefaultOption.text = "Choose A Weapon"
+    fifthDefaultOption.text = "Choose A Second Weapon"
     weaponDropdown.add(fourthDefaultOption)
     weaponDropdown.selectedIndex = 0
+
+    secondaryDropdown.add(fifthDefaultOption)
+    secondaryDropdown.selectedIndex = 0
     let options;
     for (let i = 0; i < weaponNames.length; i++) {
         options = document.createElement('option')
         options.text = weaponNames[i]
         // debugger
         weaponDropdown.add(options)
-        
+        secondaryDropdown.add(options)
     }
 }
+
