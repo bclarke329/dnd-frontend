@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', getCharacterClass)
 document.addEventListener('DOMContentLoaded', fetchAlignments)
 document.addEventListener('DOMContentLoaded', fetchWeapons)
 
-
 //fetching race names
 function getSpecies() {
     fetch('https://www.dnd5eapi.co/api/races')
@@ -44,7 +43,6 @@ function getCharacterClass() {
         addCharacterClassesToDrop(data)
     })
 }
-
 
 function addCharacterClassesToDrop(data){
     let classesArray = data["results"]
@@ -95,7 +93,7 @@ function fetchWeapons() {
     fetch('https://www.dnd5eapi.co/api/equipment-categories/weapon')
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
 
     addWeaponToDrop(data)
   })
@@ -107,8 +105,7 @@ function addWeaponToDrop(data) {
     weaponObject.forEach(obj => {
         weaponNames.push(obj.name)
     })
-    // debugger
-
+    
     let weaponDropdown = document.getElementById('weapon-dropdown')
     let secondaryDropdown = document.getElementById('secondary-weapon-dropdown')
 
@@ -131,4 +128,36 @@ function addWeaponToDrop(data) {
         secondaryDropdown.add(options)
     }
 }
+//getting user input to save and submit to server 
+    const nameInput = document.getElementById('character-name')
+    const race = document.getElementById('species-dropdown')
+    const characterClass = document.getElementById('class-dropdown')
+    // debugger
 
+    const alignment = document.getElementById('alignment-dropdown')
+    const mainWeapon = document.getElementById('weapon-dropdown')
+    const secondWeapon = document.getElementById("secondary-weapon-dropdown")
+    const test = document.getElementById('character-input')
+
+document.getElementById("submit-character").addEventListener('submit', submitCharacter)
+
+function submitCharacter(e) {
+    e.preventDefault()
+console.log("I was clicked")
+    fetch('http://localhost:3000/characters'), {
+        method: "POST", 
+        headers: {
+            "Content-type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify ({
+            name: "nameInput.value",
+            race: "race.value",
+            class: "characterClass.value",
+            alignment: "alignment.value",
+            weapon: "mainWeapon.value",
+            secondaryWeapon: "secondWeapon.value"
+        })
+    } 
+    alert('I was saved')  
+}

@@ -4,47 +4,48 @@
     <head>
         <meta charset="=utf-8">
         <title>DnD Character Creator</title>
-        <script src="index.js" ></script>
-        <script src="src/user.js" ></script>
-        <script src="src/character.js"></script>
+        <script src="index.js" defer ></script>
+        <script src="src/user.js" defer></script>
+        <script src="src/character.js" defer></script>
     </head>
 <body>
     <h1>Welcome to the Dungeons & Dragons Character Creator</h1>
     <br>
     <br>
     <div id="name">
-        <form>
+        <form action="http;//localhost.3000/characters" method="POST">
             <label>Enter a name for your character</label><br>
-        <input type="text">
+        <input type="text" id="character-name">
        <br>
         <br>
     </div>
     <div id='character-race'>
         <label>Select A Race For Your Character</label><br>
-        <select id="species-dropdown" name="species"><br>
+        <select id="species-dropdown" name="character-race"><br>
         </select><br>
         <br>
     </div>
     <div id="character-class">
         <label>Select A Class</label><br>
-        <select id="class-dropdown" name="classes">
+        <select id="class-dropdown" name="class">
         </select><br><br>
     </div>
     <div id="alignment">
         <label>Select Your Alignment</label><br>
-        <select id="alignment-dropdown"></select><br><br>
+        <select id="alignment-dropdown" name="alignment"></select><br><br>
     </div>
     <div id="skill">
         <label>Select Your Main Weapon</label><br>
-       <select id="weapon-dropdown"></select><br><br>
+       <select id="weapon-dropdown" name="primary-weapon"></select><br><br>
     </div>
     <div id="secondary-weapon">
         <label>Choose A Secondary Weapon</label><br>
-        <select id="secondary-weapon-dropdown"></select><br><br>
+        <select id="secondary-weapon-dropdown" name="secondary-weapon"></select><br><br>
     </div>
     <input type="submit" value="Save Character" id="submit-character"></input>
     </form>
     
+    <div id="character-input"></div>
 </body>
 
 </html>
