@@ -1,9 +1,25 @@
 h1 {
-    color: palevioletred;
+    color: red;
+    font-size: 25px;
 }
 
 label {
     font-size: 18px;
+}
+
+body {
+    background-image: url(images/117900.jpg);
+}
+
+#wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
 }
 
 @font-face {
