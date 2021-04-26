@@ -88,7 +88,7 @@ function fetchWeapons() {
 function addWeaponToDrop(data) {
     let weaponDropdown = document.getElementById('weapon-dropdown')
     let secondaryDropdown = document.getElementById('secondary-weapon-dropdown')
-    
+
     data["equipment"].forEach(obj => {
         let optionPrimary = document.createElement('option')
         let optionSecondary = document.createElement('option')
@@ -102,19 +102,19 @@ function addWeaponToDrop(data) {
 function submitCharacter(event) {
     event.preventDefault();
 
-    let nameInput = document.getElementById('character-name').value
+    let name = document.getElementById('character-name').value
     let race = document.getElementById('species-dropdown').value
     let characterClass = document.getElementById('class-dropdown').value
     let alignment = document.getElementById('alignment-dropdown').value
-    let weapon = document.getElementById('weapon-dropdown').value
+    let primaryWeapon = document.getElementById('weapon-dropdown').value
     let secondaryWeapon = document.getElementById('secondary-weapon-dropdown').value
 
     let character = {
-        nameInput: nameInput,
+        name: name,
         race: race,
         characterClass: characterClass, 
         alignment: alignment,
-        weapon: weapon, 
+        primaryWeapon: primaryWeapon, 
         secondaryWeapon: secondaryWeapon
     }
 
