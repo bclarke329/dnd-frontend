@@ -141,10 +141,27 @@ function submitCharacter(event) {
     let weapon = document.getElementById('weapon-dropdown').value
     let secondaryWeapon = document.getElementById('secondary-weapon-dropdown').value
 
-    console.log(nameInput, race, characterClass, alignment, weapon, secondaryWeapon)
+    let character = {
+        nameInput: nameInput,
+        race: race,
+        characterClass: characterClass, 
+        alignment: alignment,
+        weapon: weapon, 
+        secondaryWeapon: secondaryWeapon
+    }
+
+    fetch("http://localhost:3000/characters", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+        body: JSON.stringify(character)
+    })
+    .then(resp => console.log(resp))      
 }
 
-submitCharacter()
+
 
 
 

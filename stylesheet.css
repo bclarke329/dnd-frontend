@@ -1,3 +1,7 @@
+h1 {
+    color: palevioletred;
+}
+
 @font-face {
     font-family: 'dndcregular';
     src: url('dndc-webfont.woff2') format('woff2'),
