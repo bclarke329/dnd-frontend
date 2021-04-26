@@ -1,9 +1,11 @@
+
 const baseUrl = "https://www.dnd5eapi.co/api/"
 
 document.addEventListener('DOMContentLoaded', getSpecies)
 document.addEventListener('DOMContentLoaded', getCharacterClass)
 document.addEventListener('DOMContentLoaded', fetchAlignments)
 document.addEventListener('DOMContentLoaded', fetchWeapons)
+document.getElementById('character-form').addEventListener('submit', submitCharacter)
 
 //fetching race names
 function getSpecies() {
@@ -120,44 +122,29 @@ function addWeaponToDrop(data) {
     secondaryDropdown.add(fifthDefaultOption)
     secondaryDropdown.selectedIndex = 0
     let options;
+    
     for (let i = 0; i < weaponNames.length; i++) {
         options = document.createElement('option')
         options.text = weaponNames[i]
-        // debugger
         weaponDropdown.add(options)
         secondaryDropdown.add(options)
     }
 }
-//getting user input to save and submit to server 
-    const nameInput = document.getElementById('character-name')
-    const race = document.getElementById('species-dropdown')
-    const characterClass = document.getElementById('class-dropdown')
-    // debugger
 
-    const alignment = document.getElementById('alignment-dropdown')
-    const mainWeapon = document.getElementById('weapon-dropdown')
-    const secondWeapon = document.getElementById("secondary-weapon-dropdown")
-    const test = document.getElementById('character-input')
+function submitCharacter(event) {
+    event.preventDefault();
 
-document.getElementById("submit-character").addEventListener('submit', submitCharacter)
+    let nameInput = document.getElementById('character-name').value
+    let race = document.getElementById('species-dropdown').value
+    let characterClass = document.getElementById('class-dropdown').value
+    let alignment = document.getElementById('alignment-dropdown').value
+    let weapon = document.getElementById('weapon-dropdown').value
+    let secondaryWeapon = document.getElementById('secondary-weapon-dropdown').value
 
-function submitCharacter(e) {
-    e.preventDefault()
-console.log("I was clicked")
-    fetch('http://localhost:3000/characters'), {
-        method: "POST", 
-        headers: {
-            "Content-type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify ({
-            name: "nameInput.value",
-            race: "race.value",
-            class: "characterClass.value",
-            alignment: "alignment.value",
-            weapon: "mainWeapon.value",
-            secondaryWeapon: "secondWeapon.value"
-        })
-    } 
-    alert('I was saved')  
+    console.log(nameInput, race, characterClass, alignment, weapon, secondaryWeapon)
 }
+
+submitCharacter()
+
+
+
