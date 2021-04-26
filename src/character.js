@@ -10,4 +10,3 @@ class Character {
 
 }
 
-let character = new Character

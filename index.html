@@ -15,25 +15,34 @@
     <br>
     <div></div>
         <form id="character-form">
-            <label>Enter a name for your character</label><br>
-        <input type="text" id="character-name"><br>
+            <label>Enter A Name For Your Character</label><br>
+        <input type="text" id="character-name"><br><br>
 
         <label>Select A Race For Your Character</label><br>
         <select id="species-dropdown" name="character-race"><br>
-        </select><br>
+            <option selected="selected">Choose A Race</option>
+
+        </select><br><br>
 
         <label>Select A Class</label><br>
         <select id="class-dropdown" name="class">
+            <option selected="selected">Choose A Class</option>
         </select><br><br>
 
         <label>Select Your Alignment</label><br>
-        <select id="alignment-dropdown" name="alignment"></select><br><br>
+        <select id="alignment-dropdown" name="alignment">
+            <option selected="selected">Choose An Alignment</option>
+        </select><br><br>
 
         <label>Select Your Main Weapon</label><br>
-       <select id="weapon-dropdown" name="primary-weapon"></select><br><br>
-
+       <select id="weapon-dropdown" name="primary-weapon">
+           <option selected="selected">Choose A Weapon</option>
+       </select><br><br>
+       
         <label>Choose A Secondary Weapon</label><br>
-        <select id="secondary-weapon-dropdown" name="secondary-weapon"></select><br><br>
+        <select id="secondary-weapon-dropdown" name="secondary-weapon">
+            <option selected="selected">Choose A Secondary Weapon</option>
+        </select><br><br>
     <input type="submit" value="Save Character" id="submit-character"></input>
     </form>
 </div>
