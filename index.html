@@ -19,73 +19,70 @@
     
     <h1>Welcome to the Dungeons & Dragons Character Creator</h1>
         <br>
-       <div class="float container" >
-        <section class="float-child">
-            <form id="character-form">
-                <label>Enter A Name For Your Character</label><br>
-            <input type="text" id="name" name="name"><br><br>
+        <div class="container">
+            <div class="container">
+                <form id="character-form">
+                    <label>Enter A Name For Your Character</label><br>
+                <input type="text" id="name" name="name"><br><br>
 
-            <label>Select A Race For Your Character</label><br>
-            <select id="species-dropdown" name="race"><br>
-                <option selected="selected">Choose A Race</option>
+                <label>Select A Race For Your Character</label><br>
+                <select id="species-dropdown" name="race"><br>
+                    <option selected="selected">Choose A Race</option>
 
+                </select><br><br>
+
+                <label>Select A Class</label><br>
+                <select id="class-dropdown" name="class">
+                    <option selected="selected">Choose A Class</option>
+                </select><br><br>
+
+                <label>Select Your Alignment</label><br>
+                <select id="alignment-dropdown" name="alignment">
+                    <option selected="selected">Choose An Alignment</option>
+                </select><br><br>
+
+                <label>Select Your Main Weapon</label><br>
+            <select id="weapon-dropdown" name="primary-weapon">
+                <option selected="selected">Choose A Weapon</option>
             </select><br><br>
-
-            <label>Select A Class</label><br>
-            <select id="class-dropdown" name="class">
-                <option selected="selected">Choose A Class</option>
-            </select><br><br>
-
-            <label>Select Your Alignment</label><br>
-            <select id="alignment-dropdown" name="alignment">
-                <option selected="selected">Choose An Alignment</option>
-            </select><br><br>
-
-            <label>Select Your Main Weapon</label><br>
-        <select id="weapon-dropdown" name="primary-weapon">
-            <option selected="selected">Choose A Weapon</option>
-        </select><br><br>
-        
-            <label>Choose A Secondary Weapon</label><br>
-            <select id="secondary-weapon-dropdown" name="secondary-weapon">
-                <option selected="selected">Choose A Secondary Weapon</option>
-            </select><br><br>
-        <input type="submit" value="Save Character" id="submit-character"></input>
-        </form>
-        <div id="character-input" style="text-align: right;"></div>
-    </section>
-
-<section class=right-side-summary">
-   <h3>Character Summary</h3>
+            
+                <label>Choose A Secondary Weapon</label><br>
+                <select id="secondary-weapon-dropdown" name="secondary-weapon">
+                    <option selected="selected">Choose A Secondary Weapon</option>
+                </select><br><br>
+            <input type="submit" value="Save Character" id="submit-character"></input>
+            </form>
+    </div>
+    <div class="container">
+        <h2>Character Summary</h2>
+    </div>
 </div>
-</section>
 
-<section>
-    <span id="login">
+<div class="container-two"></div>
+    <div class="continer-two">
     <h3>Login</h3>
     <form id="login-form">
         <label>Username</label>
         <input type="text" name="username-one" id="username-one"><br>
         <label>Password</label>
         <input type="password" name="password-one" id="password-one"><br>
-        <input type="submit">
+        <input type="submit" id="login" value="Log In">
     </form>
-    </span>
+</div>
 <br>
-    <span id="signup">
-        <h3>Sign Up</h3>
-        <form id="signup-form">
-            <label>Username</label>
-            <input type="text" name="username" id="username"><br>
-            <label>Email</label>
-            <input type="email" name="email" id="email"><br>
-            <label>Password</label>
-            <input type="password" name="password" id="password"><br>
-            <input type="submit" id="submit" value="Sign Up">
-        </form>
-
-    </span>
-</section>
+    <div class="container-two">
+            <h3>Sign Up</h3>
+            <form id="signup-form">
+                <label>Username</label>
+                <input type="text" name="username" id="username"><br>
+                <label>Email</label>
+                <input type="email" name="email" id="email"><br>
+                <label>Password</label>
+                <input type="password" name="password" id="password"><br>
+                <input type="submit" id="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 

@@ -115,7 +115,7 @@ function submitCharacter(event) {
         race: race,
         character_class: characterClass, 
         alignment: alignment,
-        primary_weapon: weapon, 
+        primary_weapon: primaryWeapon, 
         secondary_weapon: secondaryWeapon
     }
 
