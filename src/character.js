@@ -16,14 +16,14 @@ class Character {
         `
         <ul>
             <h5>${this.name}</h5><br>
-            <li>${this.race}}</li><br>
+            <li>${this.race}</li><br>
             <li>${this.characterClass}</li><br>
             <li>${this.alignment}</li><br>
             <li>${this.primary_weapon}</li><br>
             <li>${this.secondary_weapon}</li><br>
         </ul>
         `
-        
+        console.log(this.race)
     }
 
 }

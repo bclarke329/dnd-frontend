@@ -129,9 +129,15 @@ function submitCharacter(event) {  //sends created characters to database
           },
         body: JSON.stringify(character)
     })
-    .then(resp => console.log(resp))  
-    alert("Character has been created!") 
-    fetchCharacters()
+    .then(resp => resp.json())  
+    .then(character => {
+        alert("Character has been created!") 
+
+        let char = new Character(character.id, character.name, character.race, character.characterClass, character.alignment, character.primary_weapon, character.secondary_weapon)
+        char.renderCharacter()
+    })
+   
+
 }
 
 function signupFormSubmission(event) { //sends users back to database
@@ -187,16 +193,17 @@ function loginSubmission(event) { //login back to database
 
 }
 
-function fetchCharacters() {
-    fetch(`http://localhost:3000/characters${character.id}`)
-    .then(resp => resp.json())
-    .then(characters => {
-        for(const character of characters) {
-            let char = new Character(character.id, character.name, character.race, character.characterClass, character.alignment, character.primary_weapon, character.secondary_weapon)
-            char.renderCharacter()
-        }
-    })
-}
+// function fetchCharacter() {
+//     fetch(`http://localhost:3000/characters/1`)
+//     .then(resp => resp.json())
+//     .then(character => {
+//     console.log(character)
+    
+//         // let char = new Character(character.id, character.name, character.race, character.characterClass, character.alignment, character.primary_weapon, character.secondary_weapon)
+//         character.renderCharacter()
+    
+//     })
+// }
 
 
 
