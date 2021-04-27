@@ -149,14 +149,35 @@ function signupFormSubmission(event) {
             "Content-Type": "application/json",
             "Accept": "application/json"
           },
-        body: JSON.stringify(signup)
+    body: JSON.stringify(signup)
     })
     .then(resp => resp.json())
     .then(user => {
         let u = new User(user.id, user.username, user.email, user.password)
     })
+}
+
+function loginSubmission(event) {
+    event.preventDefault
+
+    let username = document.getElementById('username-one').value
+    let password = docment.getElementById('password-one').value
+
+    let login = {
+        username: username,
+        password: password
+    }
 
 
+    fetch("http://127.0.0.1:3000/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+    body: JSON.stringify(login)
+    })
+    .then(resp => console.log(resp))
 
 
 }
