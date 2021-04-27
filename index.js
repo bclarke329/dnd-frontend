@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', getCharacterClass)
 document.addEventListener('DOMContentLoaded', fetchAlignments)
 document.addEventListener('DOMContentLoaded', fetchWeapons)
 document.getElementById('character-form').addEventListener('submit', submitCharacter)
+document.getElementById('signup-form').addEventListener('submit', signupFormSubmission)
 
 //fetching race names
 function getSpecies() {
@@ -102,7 +103,7 @@ function addWeaponToDrop(data) {
 function submitCharacter(event) {
     event.preventDefault();
 
-    let name = document.getElementById('character-name').value
+    let name = document.getElementById('name').value
     let race = document.getElementById('species-dropdown').value
     let characterClass = document.getElementById('class-dropdown').value
     let alignment = document.getElementById('alignment-dropdown').value
@@ -112,10 +113,10 @@ function submitCharacter(event) {
     let character = {
         name: name,
         race: race,
-        characterClass: characterClass, 
+        character_class: characterClass, 
         alignment: alignment,
-        primaryWeapon: primaryWeapon, 
-        secondaryWeapon: secondaryWeapon
+        primary_weapon: weapon, 
+        secondary_weapon: secondaryWeapon
     }
 
     fetch("http://127.0.0.1:3000/characters", {
@@ -127,6 +128,37 @@ function submitCharacter(event) {
         body: JSON.stringify(character)
     })
     .then(resp => console.log(resp))      
+}
+
+function signupFormSubmission(event) {
+    event.preventDefault()
+
+    let username = document.getElementById('username').value
+    let email = document.getElementById('email').value
+    let password = document.getElementById('password').value
+
+    let signup = {
+        username: username,
+        email: email, 
+        password
+    }
+
+    fetch("http://127.0.0.1:3000/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+        body: JSON.stringify(signup)
+    })
+    .then(resp => resp.json())
+    .then(user => {
+        let u = new User(user.id, user.username, user.email, user.password)
+    })
+
+
+
+
 }
 
 

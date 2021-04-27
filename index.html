@@ -12,51 +12,81 @@
 <body>
     <br>
     <br>
-    <div id="wrapper"
+    <div id="wrapper">
     <br>
     <br>
     <img src="images/2560px-Dungeons_&_Dragons_5th_Edition_logo.svg.png"  alt="dnd-logo" width="400" height="150">
-    <section class="left-side-form"
+    
     <h1>Welcome to the Dungeons & Dragons Character Creator</h1>
+        <br>
+       <div class="float container" >
+        <section class="float-child">
+            <form id="character-form">
+                <label>Enter A Name For Your Character</label><br>
+            <input type="text" id="name" name="name"><br><br>
 
-        <form id="character-form">
-            <label>Enter A Name For Your Character</label><br>
-        <input type="text" id="character-name"><br><br>
+            <label>Select A Race For Your Character</label><br>
+            <select id="species-dropdown" name="race"><br>
+                <option selected="selected">Choose A Race</option>
 
-        <label>Select A Race For Your Character</label><br>
-        <select id="species-dropdown" name="character-race"><br>
-            <option selected="selected">Choose A Race</option>
+            </select><br><br>
 
+            <label>Select A Class</label><br>
+            <select id="class-dropdown" name="class">
+                <option selected="selected">Choose A Class</option>
+            </select><br><br>
+
+            <label>Select Your Alignment</label><br>
+            <select id="alignment-dropdown" name="alignment">
+                <option selected="selected">Choose An Alignment</option>
+            </select><br><br>
+
+            <label>Select Your Main Weapon</label><br>
+        <select id="weapon-dropdown" name="primary-weapon">
+            <option selected="selected">Choose A Weapon</option>
         </select><br><br>
+        
+            <label>Choose A Secondary Weapon</label><br>
+            <select id="secondary-weapon-dropdown" name="secondary-weapon">
+                <option selected="selected">Choose A Secondary Weapon</option>
+            </select><br><br>
+        <input type="submit" value="Save Character" id="submit-character"></input>
+        </form>
+        <div id="character-input" style="text-align: right;"></div>
+    </section>
 
-        <label>Select A Class</label><br>
-        <select id="class-dropdown" name="class">
-            <option selected="selected">Choose A Class</option>
-        </select><br><br>
+<section class=right-side-summary">
+   <h3>Character Summary</h3>
+</div>
+</section>
 
-        <label>Select Your Alignment</label><br>
-        <select id="alignment-dropdown" name="alignment">
-            <option selected="selected">Choose An Alignment</option>
-        </select><br><br>
-
-        <label>Select Your Main Weapon</label><br>
-       <select id="weapon-dropdown" name="primary-weapon">
-           <option selected="selected">Choose A Weapon</option>
-       </select><br><br>
-       
-        <label>Choose A Secondary Weapon</label><br>
-        <select id="secondary-weapon-dropdown" name="secondary-weapon">
-            <option selected="selected">Choose A Secondary Weapon</option>
-        </select><br><br>
-    <input type="submit" value="Save Character" id="submit-character"></input>
+<section>
+    <span id="login">
+    <h3>Login</h3>
+    <form id="login-form">
+        <label>Username</label>
+        <input type="text"><br>
+        <label>Password</label>
+        <input type="password"><br>
+        <input type="submit">
     </form>
-    <div id="character-input" style="text-align: right;"></div>
-</section>
+    </span>
+<br>
+    <span id="signup">
+        <h3>Sign Up</h3>
+        <form id="signup-form">
+            <label>Username</label>
+            <input type="text" name="username" id="username"><br>
+            <label>Email</label>
+            <input type="email" name="email" id="email"><br>
+            <label>Password</label>
+            <input type="password" name="password" id="password"><br>
+            <input type="submit" id="submit" value="Sign Up">
+        </form>
 
-<section class="right-side-form"
-    <h2>A Summary Of Your Character</h2>
-    </div>
+    </span>
 </section>
+</div>
 </body>
 
 </html>
