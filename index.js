@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', getCharacterClass)
 document.addEventListener('DOMContentLoaded', fetchAlignments)
 document.addEventListener('DOMContentLoaded', fetchWeapons)
 document.getElementById('character-form').addEventListener('submit', submitCharacter)
+
 document.getElementById('signup-form').addEventListener('submit', signupFormSubmission)
+
 
 //fetching race names
 function getSpecies() {
@@ -40,7 +42,7 @@ function getCharacterClass() {
         addCharacterClassesToDrop(data)
     })
 }
-
+//adding char classes to dropdown
 function addCharacterClassesToDrop(data){
     let classesArray = data["results"]
     let classDropdown = document.getElementById("class-dropdown")
@@ -52,7 +54,7 @@ function addCharacterClassesToDrop(data){
         classDropdown.add(options)
     }
 }
-
+//fetching alignments
 function fetchAlignments() {
     fetch('https://www.dnd5eapi.co/api/alignments')
   .then(response => response.json())
@@ -62,7 +64,7 @@ function fetchAlignments() {
     addAlignmentsToDrop(data)
   })
 }
-
+//alignments to drop 
 function addAlignmentsToDrop(data) {
     let alignmentArray = data["results"]
     let alignmentDropDown = document.getElementById('alignment-dropdown')
@@ -100,7 +102,7 @@ function addWeaponToDrop(data) {
     })
 }
 
-function submitCharacter(event) {
+function submitCharacter(event) {  //sends created characters to database
     event.preventDefault();
 
     let name = document.getElementById('name').value
@@ -127,10 +129,12 @@ function submitCharacter(event) {
           },
         body: JSON.stringify(character)
     })
-    .then(resp => console.log(resp))      
+    .then(resp => console.log(resp))  
+    alert("Character has been created!") 
+    fetchCharacters()
 }
 
-function signupFormSubmission(event) {
+function signupFormSubmission(event) { //sends users back to database
     event.preventDefault()
 
     let username = document.getElementById('username').value
@@ -157,7 +161,7 @@ function signupFormSubmission(event) {
     })
 }
 
-function loginSubmission(event) {
+function loginSubmission(event) { //login back to database
     event.preventDefault
 
     let username = document.getElementById('username-one').value
@@ -178,8 +182,20 @@ function loginSubmission(event) {
     body: JSON.stringify(login)
     })
     .then(resp => console.log(resp))
+    alert("You are logged in and can begin saving your characters for future use.")
 
 
+}
+
+function fetchCharacters() {
+    fetch(`http://localhost:3000/characters${character.id}`)
+    .then(resp => resp.json())
+    .then(characters => {
+        for(const character of characters) {
+            let char = new Character(character.id, character.name, character.race, character.characterClass, character.alignment, character.primary_weapon, character.secondary_weapon)
+            char.renderCharacter()
+        }
+    })
 }
 
 

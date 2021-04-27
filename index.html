@@ -20,6 +20,7 @@
     <h1>Welcome to the Dungeons & Dragons Character Creator</h1>
         <br>
         <div class="container">
+
             <div class="container">
                 <form id="character-form">
                     <label>Enter A Name For Your Character</label><br>
@@ -28,7 +29,6 @@
                 <label>Select A Race For Your Character</label><br>
                 <select id="species-dropdown" name="race"><br>
                     <option selected="selected">Choose A Race</option>
-
                 </select><br><br>
 
                 <label>Select A Class</label><br>
@@ -53,13 +53,17 @@
             <input type="submit" value="Save Character" id="submit-character"></input>
             </form>
     </div>
-    <div class="container">
+
+    <div class="container" id="character-container">
         <h2>Character Summary</h2>
     </div>
-</div>
 
+</div>
+<br>
+<hr>
 <div class="container-two"></div>
-    <div class="continer-two">
+
+    <div class="container-two">
     <h3>Login</h3>
     <form id="login-form">
         <label>Username</label>
@@ -69,7 +73,7 @@
         <input type="submit" id="login" value="Log In">
     </form>
 </div>
-<br>
+
     <div class="container-two">
             <h3>Sign Up</h3>
             <form id="signup-form">
@@ -81,9 +85,11 @@
                 <input type="password" name="password" id="password"><br>
                 <input type="submit" id="submit" value="Sign Up">
             </form>
-        </div>
     </div>
+
 </div>
+
+</div> 
 </body>
 
 </html>
