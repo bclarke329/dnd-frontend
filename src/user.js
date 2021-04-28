@@ -1,6 +1,5 @@
-class User{
-    constructor(username, email) {
-        this.username = username;
-        this.email = email;
+class Party{
+    constructor(name) {
+        this.name
     }
 }

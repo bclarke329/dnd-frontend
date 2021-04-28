@@ -11,7 +11,7 @@ class Character {
 
     renderCharacter() {
         let characterDiv = document.getElementById("character-container")
-
+        let characterClass = this.characterClass
         characterDiv.innerHTML +=
         `
         <ul>
@@ -23,7 +23,7 @@ class Character {
             <li>${this.secondary_weapon}</li><br>
         </ul>
         `
-        console.log(this.race)
+        console.log(this.characterClass)
     }
 
 }

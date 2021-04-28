@@ -133,8 +133,9 @@ function submitCharacter(event) {  //sends created characters to database
     .then(character => {
         alert("Character has been created!") 
 
-        let char = new Character(character.id, character.name, character.race, character.characterClass, character.alignment, character.primary_weapon, character.secondary_weapon)
+        let char = new Character(character.id, character.name, character.race, character.character_class, character.alignment, character.primary_weapon, character.secondary_weapon)
         char.renderCharacter()
+        console.log(character)
     })
    
 
@@ -168,7 +169,7 @@ function signupFormSubmission(event) { //sends users back to database
 }
 
 function loginSubmission(event) { //login back to database
-    event.preventDefault
+    event.preventDefault()
 
     let username = document.getElementById('username-one').value
     let password = docment.getElementById('password-one').value
