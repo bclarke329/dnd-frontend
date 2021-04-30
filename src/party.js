@@ -4,13 +4,10 @@ class Party{
         this.partyName = partyName
     }
 
-    // getPartyName() {
-    //     let partyName = document.getElementById("party-name").value
-    
-    // }
-    // renderPartyName() {
-    //     let characterDiv = document.getElementById("character-container")
-    //     characterDiv.innerHTML +=
-    //     `<h2>Character name for ${this.partyName}</h2>`
-    // } 
+    renderPartyName() {
+        let characterDiv = document.getElementById("character-container")
+        characterDiv.innerHTML +=
+        `<h2>Character Summary For The ${this.party_name}</h2>`
+        debugger
+    } 
 }

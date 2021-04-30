@@ -12,7 +12,7 @@
 <body>
     <br>
     <br>
-    <div id="wrapper">
+<div id="wrapper">
     <br>
     <br>
     <img src="images/2560px-Dungeons_&_Dragons_5th_Edition_logo.svg.png"  alt="dnd-logo" width="400" height="150">
@@ -23,12 +23,16 @@
         <br>
         <br>
         <br>
-        <p>Step 1: Name Your Party</p>
-        <label>Enter A Party Name</label><br>
-        <input type="text" id="party-name" name="party-name"><br><br>
-        <input type="submit" id="submit-party" value="Name Party"><br><br>
-
         <div class="container">
+
+            <div class="container">
+                <h5>Step 1: Name Your Party</h5><br>
+                <form id="party-form">
+                    <label>Enter A Party Name</label><br>
+                    <input type="text" id="party-name" name="party-name"><br><br>
+                    <input type="submit" id="submit-party" value="Name Party"><br><br>
+                </form>
+             </div>
 
             <div class="container">
                 <p> Step 2: Create Your Characters to fill your party.</p><br>
@@ -62,12 +66,12 @@
                 </select><br><br>
             <input type="submit" value="Save Character" id="submit-character"></input>
             </form>
-    </div>
+        </div>
 
     <div class="container" id="character-container">
-        <h2>Party Summary</h2>
+        <!--  -->
     </div>
-
+</div>
 </div>
 <br>
 <hr>
@@ -75,9 +79,6 @@
 
    
 
-</div>
-
-</div> 
 </body>
 
 </html>
