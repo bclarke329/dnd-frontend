@@ -5,9 +5,52 @@ document.addEventListener('DOMContentLoaded', getSpecies)
 document.addEventListener('DOMContentLoaded', getCharacterClass)
 document.addEventListener('DOMContentLoaded', fetchAlignments)
 document.addEventListener('DOMContentLoaded', fetchWeapons)
-document.getElementById('character-form').addEventListener('submit', submitCharacter)
 
-document.getElementById('signup-form').addEventListener('submit', signupFormSubmission)
+document.getElementById('character-form').addEventListener('submit', submitCharacter)
+document.getElementById('party-name').addEventListener('submit', getPartyName)
+
+function getPartyName() {
+    event.preventDefault()
+    let partyName = document.getElementById("party-name").value
+    
+    partyName = {
+        party_name: partyName
+    }
+    fetch("http://localhost:3000/parties"), {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(partyName)
+    }
+        .then(resp => resp.json())
+        then(party => {
+            alert("Party has been created!") 
+    
+            let p = new Party(party.id, party.partyName)
+            p.renderPartyName()
+            console.log(partyName)
+        
+})
+
+
+// function displayPartyName () {
+//     fetch("http://localhost:3000/parties"), {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Accept": "application/json"
+//         }, 
+//         body: JSON.stringify(partyName)
+//         }
+//         .then(resp => resp.json())
+//         .then(party => {
+//             let p = new Party(party.name)
+//             p.renderPartyName()
+//         })
+    
+// }
 
 
 //fetching race names
@@ -102,8 +145,8 @@ function addWeaponToDrop(data) {
     })
 }
 
-function submitCharacter(event) {  //sends created characters to database
-    event.preventDefault();
+function submitCharacter() {
+event.preventDefault();
 
     let name = document.getElementById('name').value
     let race = document.getElementById('species-dropdown').value
@@ -137,76 +180,4 @@ function submitCharacter(event) {  //sends created characters to database
         char.renderCharacter()
         console.log(character)
     })
-   
-
 }
-
-function signupFormSubmission(event) { //sends users back to database
-    event.preventDefault()
-
-    let username = document.getElementById('username').value
-    let email = document.getElementById('email').value
-    let password = document.getElementById('password').value
-
-    let signup = {
-        username: username,
-        email: email, 
-        password
-    }
-
-    fetch("http://127.0.0.1:3000/users", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-    body: JSON.stringify(signup)
-    })
-    .then(resp => resp.json())
-    .then(user => {
-        let u = new User(user.id, user.username, user.email, user.password)
-    })
-}
-
-function loginSubmission(event) { //login back to database
-    event.preventDefault()
-
-    let username = document.getElementById('username-one').value
-    let password = docment.getElementById('password-one').value
-
-    let login = {
-        username: username,
-        password: password
-    }
-
-
-    fetch("http://127.0.0.1:3000/users", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-    body: JSON.stringify(login)
-    })
-    .then(resp => console.log(resp))
-    alert("You are logged in and can begin saving your characters for future use.")
-
-
-}
-
-// function fetchCharacter() {
-//     fetch(`http://localhost:3000/characters/1`)
-//     .then(resp => resp.json())
-//     .then(character => {
-//     console.log(character)
-    
-//         // let char = new Character(character.id, character.name, character.race, character.characterClass, character.alignment, character.primary_weapon, character.secondary_weapon)
-//         character.renderCharacter()
-    
-//     })
-// }
-
-
-
-
-

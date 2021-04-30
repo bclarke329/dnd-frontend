@@ -4,6 +4,11 @@ h1 {
     text-align: center;
 }
 
+h4 {
+    font-size: 20px;
+    text-align: center;
+}
+
 label {
     font-size: 18px;
 }

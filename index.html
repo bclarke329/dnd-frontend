@@ -5,7 +5,7 @@
         <meta charset="=utf-8">
         <title>DnD Character Creator</title>
         <script src="index.js" defer ></script>
-        <script src="src/user.js" defer></script>
+        <script src="src/party.js" defer></script>
         <script src="src/character.js" defer></script>
         <link rel="stylesheet" href="stylesheet.css">
     </head>
@@ -18,17 +18,20 @@
     <img src="images/2560px-Dungeons_&_Dragons_5th_Edition_logo.svg.png"  alt="dnd-logo" width="400" height="150">
     
     <h1>Welcome to the Dungeons & Dragons Character Creator</h1>
-    <h4>Enter a party name and create characters to fill your group of characters.</h4>
-    <h4>Make sure your characters have complementing skills and classes to have a group ready for all of the dangers and adventures of the fantasy world of Dungeon & Dragons.</h4>
+    <h4>Enter a party name and create characters to fill your party.</h4>
+    <h4>Make sure your characters have complementing skills and classes to have a group ready for all of the dangers and adventures of the fantasy world of Dungeons & Dragons.</h4>
         <br>
         <br>
         <br>
-        <label>Enter A Party Name</label>
-        <input type="text" id="party-name" name="party-name">
+        <p>Step 1: Name Your Party</p>
+        <label>Enter A Party Name</label><br>
+        <input type="text" id="party-name" name="party-name"><br><br>
+        <input type="submit" id="submit-party" value="Name Party"><br><br>
 
         <div class="container">
 
             <div class="container">
+                <p> Step 2: Create Your Characters to fill your party.</p><br>
                 <form id="character-form">
                     <label>Name Your Character</label><br>
                 <input type="text" id="name" name="name"><br><br>
