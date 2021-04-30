@@ -16,23 +16,24 @@ function getPartyName() {
     partyName = {
         party_name: partyName
     }
-    fetch("http://localhost:3000/parties"), {
+
+    const configObj = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"
         },
         body: JSON.stringify(partyName)
-    }
-        .then(resp => resp.json())
-        then(party => {
-            alert("Party has been created!") 
-    
-            let p = new Party(party.id, party.partyName)
-            p.renderPartyName()
-            console.log(partyName)
-        
-})
+    };
+    fetch("http://localhost:3000/parties, configObj")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(object) {
+        console.log(object);
+    })
+            
+}
 
 
 // function displayPartyName () {
@@ -171,7 +172,7 @@ event.preventDefault();
             "Accept": "application/json"
           },
         body: JSON.stringify(character)
-    })
+    
     .then(resp => resp.json())  
     .then(character => {
         alert("Character has been created!") 
@@ -180,4 +181,4 @@ event.preventDefault();
         char.renderCharacter()
         console.log(character)
     })
-}
+)}
