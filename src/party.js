@@ -7,7 +7,7 @@ class Party{
     renderPartyName() {
         let characterDiv = document.getElementById("character-container")
         characterDiv.innerHTML +=
-        `<h2>Character Summary For The ${this.party_name}</h2>`
+        `<h2>Character Summary For The ${this.partyName}</h2>`
         debugger
     } 
 }

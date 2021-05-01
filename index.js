@@ -28,7 +28,8 @@ function getPartyName() {
         .then(resp => resp.json())
         .then(party => {
             alert("Party has been created!") 
-            let p = new Party(party.id, party.partyName)
+            // debugger
+            let p = new Party(party.id, party.party_name)
             p.renderPartyName()
             console.log(partyName)
 })
@@ -155,7 +156,7 @@ event.preventDefault();
     .then(resp => resp.json())  
     .then(character => {
         alert("Character has been created!") 
-        let char = new Character(character.id, character.name, character.race, character.character_class, character.alignment, character.primary_weapon, character.secondary_weapon)
+        let char = new Character(character.id, character.name, character.race, character.characterClass, character.alignment, character.primary_weapon, character.secondary_weapon)
         char.renderCharacter()
         console.log(character)
     })

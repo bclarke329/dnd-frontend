@@ -1,4 +1,7 @@
 class Character {
+
+    static all = []
+
     constructor(id, name, race, characterClass, alignment, primary_weapon, secondary_weapon) {
         this.id = id
         this.name = name;
@@ -7,11 +10,35 @@ class Character {
         this.alignment = alignment;
         this.primary_weapon = primary_weapon;
         this.secondary_weapon = secondary_weapon;
+
+        Character.all.push(this)
     }
+
+    static getSpecies() {
+        fetch('https://www.dnd5eapi.co/api/races')
+        .then(response => response.json())
+        .then(data => {
+            // console.log(data)
+            addSpeciesToDrop(data)
+        })
+    }
+
+    static addSpeciesToDrop(data) {
+        let raceArray = data["results"]
+        let dropdown = document.getElementById("species-dropdown")
+        let option;
+        for (let i = 0; i < raceArray.length; i++) {
+            option = document.createElement('option')
+            option.text = raceArray[i].name
+            dropdown.add(option)
+        }
+    }
+   
+    //adding races to dropdown menu
+   
 
     renderCharacter() {
         let characterDiv = document.getElementById("character-container")
-        let characterClass = this.characterClass
         characterDiv.innerHTML +=
         `
         <ul>

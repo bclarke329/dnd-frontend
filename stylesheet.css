@@ -31,11 +31,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-
-.container-two {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    margin: 15px;
 }
 
 @font-face {
