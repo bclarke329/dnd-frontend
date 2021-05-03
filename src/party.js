@@ -9,11 +9,12 @@ class Party{
         // Party.all.push(this)
     }
 
-    static getPartyName() {
+    static getPartyName(event) {
         event.preventDefault()
+        
         let partyName = document.getElementById("party-name").value
-    
-        partyInfo = {
+        
+        let partyInfo = {
             party_name: partyName
         }
         fetch("http://localhost:3000/parties", {
@@ -30,7 +31,7 @@ class Party{
                 // debugger
                 let p = new Party(party.id, party.party_name)
                 p.renderPartyName()
-                p.addEventListener('submit', getParty)
+                debugger
                 console.log(partyName)
         })
         document.getElementById('party-form').reset()
@@ -43,7 +44,17 @@ class Party{
         let characterDiv = document.getElementById("character-container")
         characterDiv.innerHTML +=
         `<h2>Character Summary For The ${this.partyName}</h2>`
-        debugger
+        // debugger
     } 
 }
+
+
+// document.addEventListener("DOMContentLoaded", ()=> {
+//     //     getSpecies();
+//     //     getCharacterClass();
+//     //     fetchAlignments();
+//     //     fetchWeapons();
+//     //   document.getElementById('character-form').addEventListener('submit', submitCharacter)
+//       document.getElementById('party-form').addEventListener('submit', Party.getPartyName)
+//     })
 

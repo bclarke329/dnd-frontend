@@ -4,9 +4,9 @@
     <head>
         <meta charset="=utf-8">
         <title>DnD Character Creator</title>
-        <script src="index.js" defer ></script>
         <script src="src/party.js" defer></script>
         <script src="src/character.js" defer></script>
+        <script src="index.js" defer ></script>
         <link rel="stylesheet" href="stylesheet.css">
     </head>
 <body>
@@ -36,9 +36,9 @@
 
             <div class="container">
                 <p> Step 2: Create Your Characters to fill your party.</p><br>
-                <form id="character-form">
+                <form id="character-form" hidden>
                     <label>Name Your Character</label><br>
-                <input type="text" id="name" name="name"><br><br>
+                <input type="text" id="name" name="name" required><br><br>
 
                 <label>Select A Race For Your Character</label><br>
                 <select id="species-dropdown" name="race"><br>

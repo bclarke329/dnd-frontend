@@ -1,13 +1,19 @@
 const baseUrl = "https://www.dnd5eapi.co/api/"
+const partyForm = document.getElementById('party-form')
+const characterForm = document.getElementById('character-form')
 
 
 // document.addEventListener("DOMContentLoaded", ()=> {
-//   getSpecies();
-//   getCharacterClass();
-//   fetchAlignments();
-//   fetchWeapons();
-//   document.getElementById('character-form').addEventListener('submit', submitCharacter)
-//   document.getElementById('party-form').addEventListener('submit', getPartyName)
+    Character.getSpecies();
+    Character.getCharacterClass();
+    Character.fetchAlignments();
+    Character.fetchWeapons();
+
+    characterForm.addEventListener('submit', Character.submitCharacter)
+    partyForm.addEventListener('submit', Party.getPartyName)
+    partyForm.addEventListener('submit', () => {
+      characterForm.hidden = false
+  })
 // })
 
 // function getPartyName() {
@@ -36,7 +42,7 @@ const baseUrl = "https://www.dnd5eapi.co/api/"
 //     document.getElementById('party-form').reset()
 // }
 
-//fetching race names
+// // fetching race names
 // function getSpecies() {
 //     fetch('https://www.dnd5eapi.co/api/races')
 //     .then(response => response.json())
@@ -45,7 +51,7 @@ const baseUrl = "https://www.dnd5eapi.co/api/"
 //         addSpeciesToDrop(data)
 //     })
 // }
-//adding races to dropdown menu
+// // adding races to dropdown menu
 // function addSpeciesToDrop(data) {
 //     let raceArray = data["results"]
 //     let dropdown = document.getElementById("species-dropdown")
@@ -56,7 +62,7 @@ const baseUrl = "https://www.dnd5eapi.co/api/"
 //         dropdown.add(option)
 //     }
 // }
-//fetching classes
+// // fetching classes
 // function getCharacterClass() {
 //     fetch("https://www.dnd5eapi.co/api/classes")
 //     .then(response => response.json())
@@ -76,7 +82,7 @@ const baseUrl = "https://www.dnd5eapi.co/api/"
 //         classDropdown.add(options)
 //     }
 // }
-//fetching alignments
+// // fetching alignments
 // function fetchAlignments() {
 //     fetch('https://www.dnd5eapi.co/api/alignments')
 //   .then(response => response.json())
