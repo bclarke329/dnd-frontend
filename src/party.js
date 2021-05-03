@@ -13,9 +13,10 @@ class Party{
         event.preventDefault()
         
         let partyName = document.getElementById("party-name").value
+        // partyName.toLowerCase()
         
         let partyInfo = {
-            party_name: partyName
+            party_name: partyName.toUpperCase()
         }
         fetch("http://localhost:3000/parties", {
             method: "POST",

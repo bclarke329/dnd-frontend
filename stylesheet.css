@@ -17,6 +17,14 @@ body {
     background-image: url(images/117900.jpg);
 }
 
+#dnd-characters {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+  
+}
+
 #wrapper {
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);

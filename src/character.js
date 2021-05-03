@@ -19,10 +19,11 @@ class Character {
         let characterDiv = document.getElementById("character-container")
         characterDiv.innerHTML +=
         `
+        <br>
         <ul>
             <h5>${this.name}</h5><br>
             <li>${this.race}</li><br>
-            <li>${this.characterClass}</li><br>
+            <li>${this.character_class}</li><br>
             <li>${this.alignment}</li><br>
             <li>${this.primary_weapon}</li><br>
             <li>${this.secondary_weapon}</li><br>
@@ -144,7 +145,7 @@ class Character {
             .then(resp => resp.json())  
             .then(character => {
                 alert("Character has been created!") 
-                let char = new Character(character.id, character.name, character.race, character.characterClass, character.alignment, character.primary_weapon, character.secondary_weapon)
+                let char = new Character(character.id, character.name, character.race, character.character_class, character.alignment, character.primary_weapon, character.secondary_weapon)
                 char.renderCharacter()
                 console.log(character)
             })
