@@ -9,11 +9,12 @@ I used HTML, CSS, and Javascript to create my frontend with a Ruby on Rails back
 Accessing The Application
 ----------------------
 To open the application: 
--Fork and Clone this repository
--Fork and clone the backend repository "https://github.com/bclarke329/dnd-backend-"
--Make sure both tabs are open in your terminal
--To open the frontend, simply run open index.html in your terminal 
--To open the backend, run bundle install, and start the Rails server with "rails s"
+
+Fork and Clone this repository
+Fork and clone the backend repository "https://github.com/bclarke329/dnd-backend-"
+Make sure both tabs are open in your terminal
+To open the frontend, simply run open index.html in your terminal 
+To open the backend, run bundle install, and start the Rails server with "rails s"
 
 Stretch Goals
 ------------------
