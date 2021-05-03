@@ -1,12 +1,12 @@
 class Party{
 
-    // all = []
+    all = []
 
     constructor(id, partyName) {
         this.id = id
         this.partyName = partyName
 
-        // Party.all.push(this)
+        Party.all.push(this)
     }
 
     static getPartyName(event) {
