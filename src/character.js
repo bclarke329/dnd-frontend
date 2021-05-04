@@ -1,18 +1,18 @@
 class Character {
 
-    static all = []
+    // static all = []
 
-    constructor(id, name, race, character_class, alignment, primary_weapon, secondary_weapon, partyId) {
+    constructor(id, name, race, characterClass, alignment, primary_weapon, secondary_weapon, partyId) {
         this.id = id
         this.name = name;
         this.race = race;
-        this.character_class = character_class;
+        this.characterClass = characterClass;
         this.alignment = alignment;
         this.primary_weapon = primary_weapon;
         this.secondary_weapon = secondary_weapon;
-        this.party_id = partyId
+        // this.party_id = partyId
 
-        Character.all.push(this)
+        // Character.all.push(this)
     }
 
     renderCharacter() {
