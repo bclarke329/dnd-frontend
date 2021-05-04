@@ -43,6 +43,7 @@ class Party{
    
     renderPartyName() {
         let characterDiv = document.getElementById("character-container")
+       characterDiv.dataset.party = this.id
         characterDiv.innerHTML +=
         `<h2>Character Summary For The ${this.partyName}</h2>`
         // debugger

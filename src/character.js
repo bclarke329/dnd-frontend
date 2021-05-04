@@ -10,7 +10,7 @@ class Character {
         this.alignment = alignment;
         this.primary_weapon = primary_weapon;
         this.secondary_weapon = secondary_weapon;
-        this.party_id = Party.partyId
+        this.party_id = partyId
 
         // Character.all.push(this)
     }
@@ -29,7 +29,7 @@ class Character {
             <li>${this.secondary_weapon}</li><br>
         </ul>
         `
-        console.log(this.characterClass)
+        // console.log(this.characterClass)
     }
 
     static getSpecies() {
@@ -125,7 +125,8 @@ class Character {
             let alignment = document.getElementById('alignment-dropdown').value
             let primaryWeapon = document.getElementById('weapon-dropdown').value
             let secondaryWeapon = document.getElementById('secondary-weapon-dropdown').value
-            let partyId = Party.party_id
+            let partyId = document.getElementById('character-container')
+
             let character = {
                 name: name,
                 race: race,
@@ -133,7 +134,7 @@ class Character {
                 alignment: alignment,
                 primary_weapon: primaryWeapon, 
                 secondary_weapon: secondaryWeapon,
-                party_id: Party.partyId
+                party_id: parseInt(partyId.dataset.party)
             }
             fetch("http://127.0.0.1:3000/characters", {
                 method: "POST",
@@ -146,7 +147,7 @@ class Character {
             .then(resp => resp.json())  
             .then(character => {
                 alert("Character has been created!") 
-                let char = new Character(character.id, character.name, character.race, character.character_class, character.alignment, character.primary_weapon, character.secondary_weapon, Party.party_id)
+                let char = new Character(character.id, character.name, character.race, character.character_class, character.alignment, character.primary_weapon, character.secondary_weapon, character.party_id)
                 // debugger
                 char.renderCharacter()
                 // console.log(character_class)
