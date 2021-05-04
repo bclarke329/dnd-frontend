@@ -32,7 +32,7 @@ class Party{
                 // debugger
                 let p = new Party(party.id, party.party_name)
                 p.renderPartyName()
-                debugger
+                // debugger
                 console.log(partyName)
         })
         document.getElementById('party-form').reset()
