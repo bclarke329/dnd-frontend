@@ -2,11 +2,11 @@ class Character {
 
     static all = []
 
-    constructor(id, name, race, characterClass, alignment, primary_weapon, secondary_weapon, partyId) {
+    constructor(id, name, race, character_class, alignment, primary_weapon, secondary_weapon, partyId) {
         this.id = id
         this.name = name;
         this.race = race;
-        this.character_class = characterClass;
+        this.character_class = character_class;
         this.alignment = alignment;
         this.primary_weapon = primary_weapon;
         this.secondary_weapon = secondary_weapon;
@@ -21,9 +21,9 @@ class Character {
         `
         <br>
         <ul>
-            <h5>${this.name}</h5><br>
+            <h4>${this.name}</h4><br>
             <li>${this.race}</li><br>
-            <li>${this.character_class}</li><br>
+            <li>${this.characterClass}</li><br>
             <li>${this.alignment}</li><br>
             <li>${this.primary_weapon}</li><br>
             <li>${this.secondary_weapon}</li><br>
@@ -147,7 +147,7 @@ class Character {
                 alert("Character has been created!") 
                 let char = new Character(character.id, character.name, character.race, character.character_class, character.alignment, character.primary_weapon, character.secondary_weapon)
                 char.renderCharacter()
-                console.log(character)
+                console.log(character_class)
             })
             document.getElementById('character-form').reset();
             

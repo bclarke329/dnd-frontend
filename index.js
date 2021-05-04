@@ -1,6 +1,7 @@
 const baseUrl = "https://www.dnd5eapi.co/api/"
 const partyForm = document.getElementById('party-form')
 const characterForm = document.getElementById('character-form')
+const searchForm = document.getElementById("party-search-form")
 
 
     Character.getSpecies();
@@ -10,6 +11,7 @@ const characterForm = document.getElementById('character-form')
 
     characterForm.addEventListener('submit', Character.submitCharacter)
     partyForm.addEventListener('submit', Party.getPartyName)
+
     partyForm.addEventListener('submit', () => {
       characterForm.hidden = false
   })
@@ -17,4 +19,9 @@ const characterForm = document.getElementById('character-form')
   partyForm.addEventListener('submit', () => {
       partyForm.hidden = true
   })
+
+//   searchForm.addEventListener('submit', () => {
+    
+//       Party.searchParty()
+//   })
 

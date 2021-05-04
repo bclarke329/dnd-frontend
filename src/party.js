@@ -1,12 +1,12 @@
 class Party{
 
-    all = []
+    // all = []
 
     constructor(id, partyName) {
         this.id = id
         this.partyName = partyName
 
-        Party.all.push(this)
+        // Party.all.push(this)
     }
 
     static getPartyName(event) {
@@ -47,15 +47,36 @@ class Party{
         `<h2>Character Summary For The ${this.partyName}</h2>`
         // debugger
     } 
+
+    // static searchParty() {
+
+    //     event.preventDefault()
+    //     let searchField = document.getElementById('search-input').value
+
+
+    //     fetch(`http://localhost:3000/parties/${searchField}`)
+    //     .then(resp => resp.json())
+    //       .then(array => {
+    //             console.log(array)
+    //          })
+    //          renderPartyChar(array)
+          
+    //  }
+      
+
+    // renderPartyChar(array) {
+    //   array.forEach(obj => {
+    //    if( searchField === party.party_name ) {
+    //        `
+    //        <ul>
+    //        <li><h3>${this.partyName}</h3></li>
+    //         <li></li>
+    //        </ul>
+    //        `
+    //    }
+
+    //   })
+    // }
+
+
 }
-
-
-// document.addEventListener("DOMContentLoaded", ()=> {
-//     //     getSpecies();
-//     //     getCharacterClass();
-//     //     fetchAlignments();
-//     //     fetchWeapons();
-//     //   document.getElementById('character-form').addEventListener('submit', submitCharacter)
-//       document.getElementById('party-form').addEventListener('submit', Party.getPartyName)
-//     })
-
