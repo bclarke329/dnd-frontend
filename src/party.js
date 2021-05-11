@@ -28,12 +28,14 @@ class Party{
         })
             .then(resp => resp.json())
             .then(party => {
-                alert("Party has been created!") 
                 // debugger
                 let p = new Party(party.id, party.party_name)
+                alert("Party has been created!") 
                 p.renderPartyName()
-                // debugger
-                console.log(partyName)
+            // })
+            // .catch(error => {
+            //    alert("Party name is already taken!")
+            //    console.log(error)
         })
         document.getElementById('party-form').reset()
         
@@ -49,35 +51,51 @@ class Party{
         // debugger
     } 
 
-    // static searchParty() {
+    static searchParty() {
+        fetch("http://localhost:3000/parties/")
+        .then(resp => resp.json())
+        .then(parties => {
+           debugger
+            let partyDrop = document.getElementById("party-dropdown")
+            parties.forEach(obj => {
+                //adds party names from db into drop
+                let partyOption = document.createElement('option')
+                    partyOption.text = obj["party_name"]
+                    partyDrop.add(partyOption)
+             })
+        })
+        
+    }
 
-    //     event.preventDefault()
-    //     let searchField = document.getElementById('search-input').value
+    
+    renderSearchChar(parties, event) {
+        event.preventDefault()
+          let parArr = parties["array"]
+          let search = document.getElementById("party-dropdown").value
+          parArr.forEach(obj => {
+              
+              obj["characters"].forEach(newObj => {
+                  debugger
+                  let addChar = document.getElementById("character-container")
+              addChar.innerHTML +=
+                  `
+                  <h3>Character Summary for ${search}</h3>
+                  <ul>
+                      <li>${newObj["name"]}</li>
+                        <li>${newObj["race"]}</li>
+                          <li>${newObj["alignment"]}</li>
+                              <li>${newObj["primary_weapon"]}</li>
+                              <li>${newObj["secondary_weapon"]}</li>
+                  </ul>
+                  `
+                  console.log(newObj["name"], newObj["race"], newObj["alignment"], newObj["primary_weapon"], newObj["secondary_weapon"])
+                  
+              })
+          })
+           
+       }
+
+    
+ }
 
 
-    //     fetch(`http://localhost:3000/parties/${searchField}`)
-    //     .then(resp => resp.json())
-    //       .then(array => {
-    //             console.log(array)
-    //          })
-    //          renderPartyChar(array)
-          
-    //  }
-      
-
-    // renderPartyChar(array) {
-    //   array.forEach(obj => {
-    //    if( searchField === party.party_name ) {
-    //        `
-    //        <ul>
-    //        <li><h3>${this.partyName}</h3></li>
-    //         <li></li>
-    //        </ul>
-    //        `
-    //    }
-
-    //   })
-    // }
-
-
-}

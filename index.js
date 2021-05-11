@@ -1,7 +1,7 @@
-const baseUrl = "https://www.dnd5eapi.co/api/"
+// const baseUrl = "https://www.dnd5eapi.co/api/"
 const partyForm = document.getElementById('party-form')
 const characterForm = document.getElementById('character-form')
-const searchForm = document.getElementById("party-search-form")
+const searchDrop = document.getElementById("party-dropdown")
 
 
     Character.getSpecies();
@@ -20,8 +20,23 @@ const searchForm = document.getElementById("party-search-form")
       partyForm.hidden = true
   })
 
-//   searchForm.addEventListener('submit', () => {
+  Party.searchParty()
+  // Party.renderSearchChar()
+
+  // const search = searchDrop.value
+
+ searchDrop.addEventListener('submit', Party.renderSearchChar)
+    // let search = searchDrop.value
     
-//       Party.searchParty()
-//   })
+  
+    // search.forEach(obj => {
+    //   console.log(obj["name"])
+   
+ 
+
+ 
+
+
+
+
 
