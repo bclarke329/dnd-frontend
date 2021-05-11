@@ -1,6 +1,6 @@
 class Character {
 
-    // static all = []
+    static all = []
 
     constructor(id, name, race, characterClass, alignment, primary_weapon, secondary_weapon, partyId) {
         this.id = id
@@ -12,7 +12,7 @@ class Character {
         this.secondary_weapon = secondary_weapon;
         this.party_id = partyId
 
-        // Character.all.push(this)
+        Character.all.push(this)
     }
 
     renderCharacter() {
