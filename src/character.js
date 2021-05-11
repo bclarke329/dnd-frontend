@@ -21,12 +21,12 @@ class Character {
         `
         <br>
         <ul>
-            <h4>${this.name}</h4><br>
-            <li>${this.race}</li><br>
-            <li>${this.characterClass}</li><br>
-            <li>${this.alignment}</li><br>
-            <li>${this.primary_weapon}</li><br>
-            <li>${this.secondary_weapon}</li><br>
+            <h4>Name: ${this.name}</h4><br>
+            <li>Race: ${this.race}</li><br>
+            <li>Class: ${this.characterClass}</li><br>
+            <li>Alignment: ${this.alignment}</li><br>
+            <li>Primary Weapon: ${this.primary_weapon}</li><br>
+            <li>Secondary Weapon: ${this.secondary_weapon}</li><br>
         </ul>
         `
         // console.log(this.characterClass)

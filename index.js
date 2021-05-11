@@ -25,12 +25,11 @@ const searchDrop = document.getElementById("party-dropdown")
 
   // const search = searchDrop.value
 
- searchDrop.addEventListener('submit', Party.renderSearchChar)
+ searchDrop.addEventListener('submit', Party.renderSearchChar(party.id))
+
     // let search = searchDrop.value
     
   
-    // search.forEach(obj => {
-    //   console.log(obj["name"])
    
  
 
