@@ -80,10 +80,11 @@ class Party{
     static renderSearchChar(event) {
         event.preventDefault()
         let searchedParty = document.getElementById("party-dropdown").value
+        document.getElementById('character-container').innerHTML = " "
+
        const foundParty = Party.all.find(party => party.id == searchedParty)
        foundParty.renderPartyName()
        let chosenChar = foundParty["characters"]
-            debugger
        chosenChar.forEach(char => {
         new Character(char["id"], char["name"], char["race"], char["character_class"], char["alignment"], char["primary_weapon"], char["secondary_weapon"], char["party_id"])
         let addChar = document.getElementById("character-container")
@@ -98,45 +99,21 @@ class Party{
                     <li>Secondary Weapon: ${char["secondary_weapon"]}</li>
                 </ul>
             <br>
-            `
-         debugger
-    })
-        ///need to iterate over the found party characters
+         `
+        })
+
+    }
+
+    
+    
+}
+    ///need to iterate over the found party characters
         ///instantiate them as new character objects
         //in same iteration, call on the functions to render character
         //clearing the dom, before render characters objects, clear the div 
 
-        
-    }
-
-    // static renderSearchChar(partyId, event) {
-    //     event.preventDefault()
-    //     fetch(`http://localhost:3000/parties/${partyId}}`)
-    //     .then(resp => resp.json())
-    //     .then(parties => {
-    //         let search = document.getElementById("party-dropdown").value
-    //         parties.forEach(obj => {
-    //             obj["characters"].forEach(newObj => {
-    //                 this.name === newObj["partyId"]
-    //                 debugger
-    //             let addChar = document.getElementById("character-container")
-    //                 addChar.innerHTML +=
-                    
-    //                 `
-    //                 <h3>Character Summary for ${this.partyName}</h3>
-    //                  <ul>
-    //                     <li>Name: ${newObj["name"]}</li>
-    //                     <li>Race: ${newObj["race"]}</li>
-    //                     <li>Alignment: ${newObj["alignment"]}</li>
-    //                     <li>Primary Weapon: ${newObj["primary_weapon"]}</li>
-    //                     <li>Secondary Weapon: ${newObj["secondary_weapon"]}</li>
-    //                 </ul>
-    //                 `
-    //             })
-    //         })
-    //     })
-            
-    }  
+ 
+     
 
 
         

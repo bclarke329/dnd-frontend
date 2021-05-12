@@ -3,6 +3,7 @@ const partyForm = document.getElementById('party-form')
 const characterForm = document.getElementById('character-form')
 const searchDrop = document.getElementById("party-dropdown")
 const search = document.getElementById('search-form')
+const characterSection = document.getElementById('character-container')
 
 
     Character.getSpecies();
@@ -27,7 +28,11 @@ const search = document.getElementById('search-form')
   // const search = searchDrop.value
 
  search.addEventListener('submit', Party.renderSearchChar)
+ 
 
+ function clearBox(characterSection) {
+     characterSection.innerHTML = " ";
+ }
     // let search = searchDrop.value
     
   
