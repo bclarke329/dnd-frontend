@@ -1,4 +1,4 @@
-Welcome to my Dungeons & Dragons Character Creator 
+Welcome to Dungeons & Dragons Character Creator 
 ========
 My name is Bessy Clarke and this is my project for Flatiron's Javascript Module. 
 
